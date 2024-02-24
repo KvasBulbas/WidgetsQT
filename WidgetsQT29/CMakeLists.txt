@@ -16,6 +16,12 @@ set(PROJECT_SOURCES
         main.cpp
         widget.cpp
         widget.h
+        figura.h
+        figura.cpp
+        area.h
+        area.cpp
+
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
