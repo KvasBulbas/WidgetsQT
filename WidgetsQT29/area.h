@@ -1,8 +1,8 @@
 #ifndef AREA_H
 #define AREA_H
 #include<QWidget>
-
 #include "figura.h"
+
 class Area : public QWidget
 {
     int myTimer; // идентификатор таймера
@@ -14,9 +14,9 @@ public:
     MyRect *myrect;
 protected:
     // обработчики событий
-    void paintEvent(QPaintEvent *event);
-    void timerEvent(QTimerEvent *event);
-    void showEvent(QShowEvent *event);
-    void hideEvent(QHideEvent *event);
+    void paintEvent(QPaintEvent *) override;
+    void timerEvent(QTimerEvent *event) override;
+    void showEvent(QShowEvent *event) override;
+    void hideEvent(QHideEvent *event) override;
 };
 #endif
