@@ -8,17 +8,17 @@ Area::Area(QWidget *parent):QWidget(parent)
     myline=new MyLine(80,100,50);
     myrect=new MyRect(220,100,50);
     alpha=0;
-    std::cout<< "create area" << std::endl;
+    //std::cout<< "create area" << std::endl;
 }
 void Area::showEvent(QShowEvent *)
 {
-    std::cout << "showEvent"<< std::endl;
+    //std::cout << "showEvent"<< std::endl;
     myTimer=startTimer(50); // создать таймер
 
 }
 void Area::paintEvent(QPaintEvent *)
 {
-    std::cout << "paintEevent"<< std::endl;
+    //std::cout << "paintEevent"<< std::endl;
     QPainter painter(this);
     painter.setPen(Qt::red);
     myline->move(alpha,&painter);
@@ -35,12 +35,12 @@ void Area::timerEvent(QTimerEvent *event)
     else
         QWidget::timerEvent(event); // иначе передать для стандартной
     // обработки
-    std::cout << "timerEvent"<< std::endl;
+    //std::cout << "timerEvent"<< std::endl;
 }
 void Area::hideEvent(QHideEvent *)
 {
     killTimer(myTimer); // уничтожить таймер
-    std::cout << "killTimer" << std::endl;
+    //std::cout << "killTimer" << std::endl;
 }
 Area::~Area()
 {

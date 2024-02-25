@@ -11,7 +11,7 @@ void Figura::move(float Alpha,QPainter *Painter)
 void MyLine::draw(QPainter *Painter)
 {
     Painter->drawLine(x+dx,y+dy,x-dx,y-dy);
-    std::cout << "Drawline" <<std::endl;
+    //std::cout << "Drawline" <<std::endl;
 }
 void MyRect::draw(QPainter *Painter)
 {
@@ -19,5 +19,5 @@ void MyRect::draw(QPainter *Painter)
     Painter->drawLine(x+dy,y-dx,x-dx,y-dy);
     Painter->drawLine(x-dx,y-dy,x-dy,y+dx);
     Painter->drawLine(x-dy,y+dx,x+dx,y+dy);
-    std::cout << "Drawrect" <<std::endl;
+    //std::cout << "Drawrect" <<std::endl;
 }
