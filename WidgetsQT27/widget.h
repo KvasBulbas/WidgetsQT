@@ -22,8 +22,6 @@ protected:
     QLineEdit *outputEdit; // строчный редактор вывода
     QPushButton *nextButton; // кнопка Следующее
     QPushButton *exitButton; // кнопка Выход
-public:
-    w(QWidget *parent = 0); // конструктор
 public slots:
     void begin(); // метод начальной настройки интерфейса
     void calc(); // метод реализации вычислений

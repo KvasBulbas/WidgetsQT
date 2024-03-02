@@ -38,12 +38,12 @@ Widget::Widget(QWidget *parent)
     hLayout->addWidget(frame);
     hLayout->addLayout(vLayout2);
     begin();
-    connect(exitButton,SIGNAL(clicked(bool)),
-            this,SLOT(close()));
-    connect(nextButton,SIGNAL(clicked(bool)),
-            this,SLOT(begin()));
-    connect(inputEdit,SIGNAL(returnPressed()),
-            this,SLOT(calc()));
+    connect(exitButton,QPushButton::clicked,
+            this,QWidget::close);
+    connect(nextButton,QPushButton::clicked,
+            this,Widget::begin);
+    connect(inputEdit,QLineEdit::returnPressed,
+            this,Widget::calc);
 
 
 
