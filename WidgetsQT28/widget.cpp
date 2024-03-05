@@ -32,8 +32,8 @@ Widget::Widget(QWidget *parent)
     layout4->addLayout(layout2);
     layout4->addLayout(layout3);
     // связь сигнала нажатия кнопки и слота закрытия окна
-    connect(calcbutton,SIGNAL(clicked(bool)), edit1, SLOT(add_one()));
-    connect(edit1,SIGNAL(tick_signal()), edit2,SLOT(add_one()));
+    connect(calcbutton,QPushButton::clicked, edit1, Counter::add_one);
+    connect(edit1,Counter::tick_signal, edit2,Counter::add_one);
     connect(exitbutton,SIGNAL(clicked(bool)),
     this,SLOT(close()));
 
