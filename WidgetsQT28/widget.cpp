@@ -34,8 +34,7 @@ Widget::Widget(QWidget *parent)
     // связь сигнала нажатия кнопки и слота закрытия окна
     connect(calcbutton,QPushButton::clicked, edit1, Counter::add_one);
     connect(edit1,Counter::tick_signal, edit2,Counter::add_one);
-    connect(exitbutton,SIGNAL(clicked(bool)),
-    this,SLOT(close()));
+    connect(exitbutton,QPushButton::clicked, this, QWidget::close);
 
 
 
