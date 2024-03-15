@@ -14,6 +14,8 @@ class Widget : public QWidget
 {
     Q_OBJECT
 protected:
+
+
     QTextCodec *codec;
     QFrame *frame; // рамка
     QLabel *inputLabel; // метка ввода

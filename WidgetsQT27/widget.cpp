@@ -2,6 +2,8 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QMessageBox>
+#include <iostream>
+#include <limits>
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -47,6 +49,7 @@ Widget::Widget(QWidget *parent)
 
 
 
+
 }
 
 Widget::~Widget()
@@ -70,17 +73,29 @@ void Widget::calc()
     bool Ok=true; float r,a;
     QString str=inputEdit->text();
     a=str.toDouble(&Ok);
+
     if (Ok)
     {
         r=a*a;
-        str.setNum(r);
-        outputEdit->setText(str);
-        inputEdit->setEnabled(false);
-        outputLabel->setVisible(true);
-        outputEdit->setVisible(true);
-        nextButton->setDefault(true);
-        nextButton->setEnabled(true);
-        nextButton->setFocus();
+        if(r <= std::numeric_limits<float>::max())
+        {
+            str.setNum(r);
+            outputEdit->setText(str);
+            inputEdit->setEnabled(false);
+            outputLabel->setVisible(true);
+            outputEdit->setVisible(true);
+            nextButton->setDefault(true);
+            nextButton->setEnabled(true);
+            nextButton->setFocus();
+        }
+        else
+        {
+            QMessageBox msgBox(QMessageBox::Information,
+                              codec->toUnicode("Squaring."),
+                              codec->toUnicode("The number is too high."),
+                              QMessageBox::Ok);
+            msgBox.exec();
+        }
     }
     else
         if (!str.isEmpty())
