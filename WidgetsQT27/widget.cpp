@@ -74,6 +74,7 @@ void Widget::calc()
     QString str=inputEdit->text();
     a=str.toDouble(&Ok);
 
+
     if (Ok)
     {
         r=a*a;
