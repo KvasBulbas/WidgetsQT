@@ -13,7 +13,7 @@ class Counter:public QLineEdit
 
 public:
 
-    Counter(const QString & contents, QWidget *parent=0):
+    Counter(const QString & contents, QWidget *parent = nullptr):
         QLineEdit(contents,parent){}
 signals:
     void tick_signal();
@@ -36,7 +36,6 @@ class Widget: public QWidget
 {
     Q_OBJECT
 protected:
-    QTextCodec *codec;
     QLabel *label1,*label2;
     Counter *edit1,*edit2;
     QPushButton *calcbutton;
